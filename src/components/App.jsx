@@ -83,7 +83,7 @@ export const App = () => {
         .catch(error => SetError(error))
         .finally(SetIsLoading(false));
     }
-  }, [searchQuery, page]);
+  }, [searchQuery, page, images]);
 
   return (
     <Context.Provider value={{ openModal }}>
