@@ -15,7 +15,7 @@ export const Modal = ({ image, closeModal }) => {
     return () => {
       document.removeEventListener('keydown', closeModalbyEsc, false);
     };
-  }, []);
+  });
 
   return (
     <div onClick={closeModal} className={css.Overlay}>
