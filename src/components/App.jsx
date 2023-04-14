@@ -56,7 +56,7 @@ export const App = () => {
     const fetchData = async () => {
       return await api.request(searchQuery, page);
     };
-    if (searchQuery !== '') {
+    if (searchQuery !== '' && isLoading) {
       fetchData()
         .then(response => {
           const { totalHits, hits } = response;
@@ -83,7 +83,7 @@ export const App = () => {
         .catch(error => SetError(error))
         .finally(SetIsLoading(false));
     }
-  }, [searchQuery, page]);
+  }, [searchQuery, page, images, isLoading]);
 
   return (
     <Context.Provider value={{ openModal }}>
